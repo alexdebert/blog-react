@@ -7,7 +7,7 @@ const Navigation = () => (
     <div className='collapse navbar-collapse'>
       <ul className='navbar-nav mr-auto'>
         <li className='nav-item'>
-          <Link to={`/home`} className='nav-link' activeClassName='active'>Home</Link>
+          <Link to={`/posts`} className='nav-link' activeClassName='active'>Posts List</Link>
         </li>
         <li className='nav-item'>
           <Link to={`/about`} className='nav-link' activeClassName='active'>About</Link>

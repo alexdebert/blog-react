@@ -13,15 +13,15 @@ import { Router, Route, IndexRoute, Redirect, browserHistory } from 'react-route
 // Our app
 import App from './app/App';
 import About from './app/about';
-import Home from './app/home';
+import PostsList from './app/postsList';
 
 render((
   <Router history={browserHistory}>
     <Route path='/' component={App}>
-      <IndexRoute component={Home}/>
+      <IndexRoute component={PostsList}/>
       <Route path='about' component={About}/>
-      <Route path='home' component={Home}/>
-      <Redirect from='*' to='/home'/>
+      <Route path='posts' component={PostsList}/>
+      <Redirect from='*' to='/posts'/>
     </Route>
   </Router>
 ), document.getElementById('root'));
