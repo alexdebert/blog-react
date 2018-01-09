@@ -12,8 +12,8 @@ class PostsList extends Component {
 	}
 
 	componentDidMount() {
-        //TODO
-    }
+		//TODO
+	}
 
 	render(){
 		return (

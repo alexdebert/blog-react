@@ -16,12 +16,12 @@ import About from './app/about';
 import PostsList from './app/postsList';
 
 render((
-  <Router history={browserHistory}>
-    <Route path='/' component={App}>
-      <IndexRoute component={PostsList}/>
-      <Route path='about' component={About}/>
-      <Route path='posts' component={PostsList}/>
-      <Redirect from='*' to='/posts'/>
-    </Route>
-  </Router>
+	<Router history={browserHistory}>
+		<Route path='/' component={App}>
+			<IndexRoute component={PostsList}/>
+			<Route path='about' component={About}/>
+			<Route path='posts' component={PostsList}/>
+			<Redirect from='*' to='/posts'/>
+		</Route>
+	</Router>
 ), document.getElementById('root'));
