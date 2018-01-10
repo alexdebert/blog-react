@@ -15,15 +15,22 @@ class PostsList extends Component {
 	}
 
 	componentDidMount() {
-		/*fetch('http://localhost:9001/posts')
+		fetch('http://localhost:9001/posts')
 			.then(response => response.json())
-			.then(({results: posts}) => this.setState({posts}))*/
+			.then(posts => this.setState({posts}))
+			.catch(error => console.error(error.response));
 	}
 
 	render(){
+		const posts = this.state.posts
 		return (
 			<div className="posts-list-container">
-				//{posts.map(post => <Post {...post} />)}
+				{posts.map(post =>
+					<Post key={post.id}
+						title={post.title}
+						author={post.author}
+						publishDate= {post.publish_date} />
+				)}
 			</div>
 		)
 	}

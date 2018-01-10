@@ -18,6 +18,15 @@ module.exports = {
         "indent": [
             "error",
             "tab"
+        ],
+        "no-console": [
+            "error",
+            {
+                allow: [
+                    "warn",
+                    "error"
+                ]
+            }
         ]
     }
 };
