@@ -3,6 +3,7 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router';
 
 const Post = props => {
 	return (
@@ -11,6 +12,7 @@ const Post = props => {
 			<p>{props.author}</p>
 			<p>{props.publishDate}</p>
 			<p>{props.description}</p>
+			<Link to={`/post-detail-${props.id}`} value='Test'>View Post</Link>
 		</div>
 	);
 

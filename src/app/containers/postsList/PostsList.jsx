@@ -35,7 +35,8 @@ class PostsList extends Component {
 						title = {post.title}
 						author = {post.author}
 						publishDate = {post.publish_date}
-						description = {post.description} />
+						description = {post.description}
+						id= {post.id} />
 				)}
 			</div>
 		)
