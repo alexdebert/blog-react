@@ -10,6 +10,7 @@ const Post = props => {
 			<p>{props.title}</p>
 			<p>{props.author}</p>
 			<p>{props.publishDate}</p>
+			<p>{props.description}</p>
 		</div>
 	);
 
@@ -20,7 +21,8 @@ Post.propTypes = {
 	id: PropTypes.number,
 	title: PropTypes.string,
 	author: PropTypes.string,
-	publishDate: PropTypes.string
+	publishDate: PropTypes.string,
+	description: PropTypes.string
 };
 
 export default Post;

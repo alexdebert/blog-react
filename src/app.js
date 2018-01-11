@@ -12,8 +12,8 @@ import { Router, Route, IndexRoute, Redirect, browserHistory } from 'react-route
 
 // Our app
 import App from './app/App';
-import About from './app/about';
-import PostsList from './app/postsList';
+import About from './app/containers/about';
+import PostsList from './app/containers/postsList';
 
 render((
 	<Router history={browserHistory}>

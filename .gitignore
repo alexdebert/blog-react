@@ -38,3 +38,7 @@ jspm_packages
 
 # build
 /dist
+
+# Other file
+.idea/
+package-lock.json

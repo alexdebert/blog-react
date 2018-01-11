@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import ReactTestUtils from 'react-dom/test-utils';
+import ReactTestUtils from '../../../../node_modules/react-dom/test-utils';
 
 import About from './About';
 
