@@ -15,7 +15,7 @@ class PostsList extends Component {
 	}
 
 	componentDidMount() {
-		fetch('http://localhost:9001/posts')
+		fetch(`http://localhost:9001/posts`)
 			.then(response => response.json())
 			.then(posts => this.orderByDate(posts))
 			.catch(error => console.error(error.response));
