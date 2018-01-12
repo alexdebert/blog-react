@@ -3,8 +3,9 @@
  */
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 
-import Post from '../../components/post/Post';
+import Post from '../../components/post/Post'
 
 class PostsList extends Component {
 	constructor() {
@@ -15,9 +16,9 @@ class PostsList extends Component {
 	}
 
 	componentDidMount() {
-		fetch(`http://localhost:9001/posts`)
-			.then(response => response.json())
-			.then(posts => this.orderByDate(posts))
+		const url = `http://localhost:9001/posts`
+		axios.get(url)
+			.then(response => this.orderByDate(response.data))
 			.catch(error => console.error(error.response));
 	}
 
