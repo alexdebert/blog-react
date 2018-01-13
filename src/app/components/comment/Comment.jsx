@@ -20,7 +20,7 @@ const Comment = props => {
 Comment.propTypes = {
 	user: PropTypes.string,
 	content: PropTypes.string,
-	parentId: PropTypes.string,
+	parentId: PropTypes.number,
 	date: PropTypes.string,
 };
 
