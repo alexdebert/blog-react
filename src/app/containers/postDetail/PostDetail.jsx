@@ -3,7 +3,8 @@
  */
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
+
+import { fetchPostDetail, postComment } from '../../api/postDetail'
 
 import CommentForm from '../../components/commentForm/CommentForm'
 import Comment from '../../components/comment/Comment';
@@ -40,18 +41,8 @@ class PostDetail extends Component {
 	}
 
 	componentDidMount() {
-		this.getPostDetail()
-	}
-
-	getPostDetail() {
-		const url = `http://localhost:9001/posts/${this.state.post.id}`
-		axios.all([
-			axios.get(url),
-			axios.get(url+`/comments`)
-		])
-			.then(axios.spread((postResp, commentResp) => {
-				this.setState({post:postResp.data, comments:commentResp.data})
-			}))
+		fetchPostDetail(this.state.post.id)
+			.then(response => this.setState({post:response.post, comments:response.comments}))
 			.catch(error => console.error(error.response));
 	}
 
@@ -66,19 +57,19 @@ class PostDetail extends Component {
 	}
 
 	handleSubmit (event) {
-		const url = `http://localhost:9001/posts/${this.state.post.id}/comments`
+		const comment = this.state.comment
+		const id = this.state.post.id
 
 		this.setState({
 			comment: {
-				...this.state.comment,
+				...comment,
 				id: this.getCommentId(),
 				date: new Date()
 			}
 		});
 
-		axios.post(url, this.state.comment)
+		postComment(id, comment)
 			.then(() => {
-				console.log('Saved successfully')
 				this.handleClearForm(event)
 			})
 			.catch(error => console.error(error.response));
