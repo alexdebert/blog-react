@@ -19,6 +19,14 @@ module.exports = {
             "error",
             "tab"
         ],
-        "no-console": "off"
+    "no-console": [
+        "error",
+            {
+                allow: [
+                    "warn",
+                    "error"
+                ]
+            }
+        ]
     }
 };

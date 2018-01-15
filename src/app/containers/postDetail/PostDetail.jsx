@@ -136,7 +136,7 @@ class PostDetail extends Component {
 				<div className="card border-dark mb-3">
 					<div className="card-header">{post.title}</div>
 					<div className="card-body text-dark">
-						<h5>Published by by {post.author} on {post.publish_date}</h5>
+						<h5>Published by {post.author} on {post.publish_date}</h5>
 						<p className="card-text">{post.description}</p>
 						<p className="card-text"dangerouslySetInnerHTML={{ __html }}></p>
 					</div>
