@@ -28,7 +28,7 @@ class PostDetail extends Component {
 				postId: props.params.id,
 				parent_id: null,
 				user: '',
-				date: new Date(),
+				date: this.getDate(),
 				content: ''
 			}
 		}
@@ -41,12 +41,27 @@ class PostDetail extends Component {
 
 	componentDidMount() {
 		fetchPostDetail(this.state.post.id)
-			.then(response => this.setState({post:response.post, comments:response.comments}))
+			.then(response => this.setState({post:response.post, comments: this.orderByDate(response.comments)}))
 			.catch(error => console.error(error.response));
 	}
 
+	getDate() {
+		let now = new Date(),
+			year = now.getFullYear(),
+			month = now.getMonth() + 1,
+			day = now.getDate();
+
+		month = month < 10 ? '0' + month : month;
+		day = day < 10 ? '0' + day : day;
+		return year + '-' + month + '-' + day;
+	}
+
+	orderByDate(comments) {
+		return comments.sort((a,b) => new Date(b.date) - new Date(a.date))
+	}
+
 	handleClearForm (event) {
-		event.persist();
+		event.preventDefault()
 		this.setState({
 			comment: {
 				user: '',
@@ -56,6 +71,7 @@ class PostDetail extends Component {
 	}
 
 	handleSubmit (event) {
+		event.persist()
 		const comment = this.state.comment
 		const id = this.state.post.id
 
@@ -63,7 +79,7 @@ class PostDetail extends Component {
 			comment: {
 				...comment,
 				id: this.getCommentId(),
-				date: new Date()
+				date: this.getDate()
 			}
 		});
 
