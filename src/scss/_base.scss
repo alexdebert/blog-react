@@ -10,4 +10,8 @@ body {
     flex-direction: column;
     justify-content: space-between;
   }
+
+	.posts-list-container, .post-detail-container, .comments-container {
+		margin: 1%;
+	}
 }

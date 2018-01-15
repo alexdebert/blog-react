@@ -7,15 +7,19 @@ import { Link } from 'react-router';
 
 const Post = props => {
 	return (
-		<div>
-			<p>{props.title}</p>
-			<p>{props.author}</p>
-			<p>{props.publishDate}</p>
-			<p>{props.description}</p>
-			<Link to={`/post-detail-${props.id}`} value='Test'>View Post</Link>
+		<div className="col-sm-4">
+			<div className="card">
+				<div className="card-body">
+					<h5 className="card-title">{props.title}</h5>
+					<p>{props.description}</p>
+					<Link to={`/post-detail-${props.id}`} className="card-link">View Post</Link>
+					<div className="card-footer">
+						<small className="text-muted">By {props.author} on {props.publishDate}</small>
+					</div>
+				</div>
+			</div>
 		</div>
 	);
-
 }
 
 

@@ -6,15 +6,22 @@ import PropTypes from 'prop-types';
 
 const CommentForm = props => {
 	return (
-		<form onSubmit={props.handleSubmit}>
-			<label>
-				User:
-				<input name="user" value={props.user} type="text" onChange={props.handleChange} />
-			</label>
-			<textarea name="content" value={props.content} onChange={props.handleChange} />
-			<input type="submit" value="Add comment" />
-			<button onClick={props.handleClearForm}>Clear comment</button>
-		</form>
+		<div className="bd-example">
+			<form onSubmit={props.handleSubmit}>
+				<div className="form-group">
+					<label>User:</label>
+					<input name="user" className="form-control" value={props.user} type="text" onChange={props.handleChange} />
+				</div>
+				<div className="form-group">
+					<label>Comment:</label>
+					<textarea name="content" className="form-control" value={props.content} onChange={props.handleChange} />
+				</div>
+				<div className="btn-group mr-2" role="group">
+					<input className="btn btn-secondary" type="submit" value="Add comment" />
+				</div>
+				<button className="btn btn-secondary" onClick={props.handleClearForm}>Clear comment</button>
+			</form>
+		</div>
 	);
 
 }
@@ -29,3 +36,4 @@ CommentForm.propTypes = {
 };
 
 export default CommentForm;
+

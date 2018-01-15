@@ -18,7 +18,6 @@ class PostDetail extends Component {
 				title: '',
 				author:'',
 				publish_date: '',
-				slug: '',
 				description: '',
 				content:''
 
@@ -118,18 +117,22 @@ class PostDetail extends Component {
 
 		return (
 			<div className="post-detail-container">
-				<p>{post.title}</p>
-				<p>{post.author}</p>
-				<p>{post.publish_date}</p>
-				<p>{post.slug}</p>
-				<p>{post.description}</p>
-				<p dangerouslySetInnerHTML={{ __html }}></p>
-				<CommentForm user = {comment.user}
-					content = {comment.content}
-					handleClearForm = {this.handleClearForm}
-					handleChange = {this.handleChange}
-					handleSubmit = {this.handleSubmit} />
-				<div className="pcomments-container">
+				<div className="card border-dark mb-3">
+					<div className="card-header">{post.title}</div>
+					<div className="card-body text-dark">
+						<h5>Published by by {post.author} on {post.publish_date}</h5>
+						<p className="card-text">{post.description}</p>
+						<p className="card-text"dangerouslySetInnerHTML={{ __html }}></p>
+					</div>
+				</div>
+				<div className="form-container">
+					<CommentForm user = {comment.user}
+						content = {comment.content}
+						handleClearForm = {this.handleClearForm}
+						handleChange = {this.handleChange}
+						handleSubmit = {this.handleSubmit} />
+				</div>
+				<div className="comments-container">
 					{comments.map(comment =>
 						<Comment key = {comment.id}
 							user = {comment.user}

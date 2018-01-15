@@ -10,7 +10,7 @@ const App = ({ children }) => (
 	<div>
 		<Navigation/>
 
-		<div className='mx-3'>
+		<div className='mx-1'>
 			{children}
 		</div>
 	</div>

@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const Navigation = () => (
-	<nav className='navbar navbar-expand-lg my-4'>
-		<h1 className='navbar-brand mb-0'>My app</h1>
+	<nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
+		<h1 className='navbar-brand mb-0'>Blog in React</h1>
 		<div className='collapse navbar-collapse'>
 			<ul className='navbar-nav mr-auto'>
 				<li className='nav-item'>

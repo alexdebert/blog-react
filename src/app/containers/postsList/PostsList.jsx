@@ -30,7 +30,7 @@ class PostsList extends Component {
 	render(){
 		const posts = this.state.posts
 		return (
-			<div className="posts-list-container">
+			<div className="row posts-list-container">
 				{posts.map(post =>
 					<Post key = {post.id}
 						title = {post.title}

@@ -6,11 +6,13 @@ import PropTypes from 'prop-types';
 
 const Comment = props => {
 	return (
-		<div>
-			<p>{props.user}</p>
-			<p>{props.content}</p>
-			<p>{props.parentId}</p>
-			<p>{props.date}</p>
+		<div className="card">
+			<div className="card-body">
+				<blockquote className="blockquote mb-0">
+					{props.content}
+					<footer className="blockquote-footer">{props.user} <cite title="Source Title">{props.date}</cite></footer>
+				</blockquote>
+			</div>
 		</div>
 	);
 
@@ -20,7 +22,6 @@ const Comment = props => {
 Comment.propTypes = {
 	user: PropTypes.string,
 	content: PropTypes.string,
-	parentId: PropTypes.number,
 	date: PropTypes.string,
 };
 
